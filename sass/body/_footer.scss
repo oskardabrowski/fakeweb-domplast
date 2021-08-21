@@ -1,0 +1,47 @@
+.footer {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+
+    @include MediaQuery(tablet1100) {
+        flex-direction: column-reverse;
+    }
+
+    &-containers {
+        display: flex;
+
+        @include MediaQuery(tablet1100) {
+            justify-content: center;
+        }
+
+        &>div {
+            display: flex;
+            flex-direction: column;
+            margin-left: 1rem;
+
+            &>span {
+                padding: .75rem;
+
+                &:not(:first-child) {
+                    border-top: 1px solid white;
+                }
+            }
+        }
+    }
+
+    &-copy {
+        @include MediaQuery(tablet1100) {
+            text-align: center;
+        }
+        &>div:first-child {
+            text-align: right;
+            @include MediaQuery(tablet1100) {
+                text-align: center;
+            }
+        }
+    }
+}

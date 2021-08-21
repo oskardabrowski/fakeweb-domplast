@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Domplast</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="img/icons/ico.png">
+        <meta charset="UTF-8">
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="css/leaflet.css" type="text/css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Georama:ital,wght@0,300;0,400;1,400&family=Lato:wght@300;400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="menu">
+            <div class="generalPage__portfolio-modal">
+                <div class="generalPage__portfolio-modal__window">
+                    <div class="generalPage__portfolio-modal__window-close"></div>
+                    <div  class="generalPage__portfolio-modal__window-img"></div>
+                </div>
+            </div>
+            <div class="menu__logo">
+                <svg class="menu__logo-svg">
+                    <use xlink:href="img/icons/logo.svg#logo"></use>
+                </svg>
+            </div>
+            <div class="menu__btn" dataTarget="#generalMenu">
+                <button class="menu__btn-container">
+                    <div class="menu__btn-container-1"></div>
+                    <div class="menu__btn-container-2"></div>
+                    <div class="menu__btn-container-3"></div>
+                </button>
+            </div>
+            <div class="menu__buttons" id='generalMenu'>
+                <div class="menu__buttons-home">
+                    <button pageTarget="#homePage">Strona główna</button>
+                    <button dataTarget="#doorMenu">
+                        <svg>
+                            <use xlink:href="img/icons/chevron_right_black_24dp.svg#right"></use>
+                        </svg>
+                        Okna/Drzwi
+                    </button>
+                    <button dataTarget="#paintMenu">
+                        <svg>
+                            <use xlink:href="img/icons/chevron_right_black_24dp.svg#right"></use>
+                        </svg>
+                        Tynki/Farby
+                    </button>
+                    <button dataTarget="#productsMenu">
+                        <svg>
+                            <use xlink:href="img/icons/chevron_right_black_24dp.svg#right"></use>
+                        </svg>
+                        Produkty
+                    </button>
+                    <button dataTarget="#servicesMenu">
+                        <svg>
+                            <use xlink:href="img/icons/chevron_right_black_24dp.svg#right"></use>
+                        </svg>
+                        Usługi
+                    </button>
+                    <button  pageTarget="#pageWork">Praca</button>
+                    <button pageTarget="#pageContact" style="border-bottom: 1px solid black;">Kontakt</button>
+
+                    <div class="menu__buttons-home-submenuDoor submenu" id="doorMenu">
+                        <button id="close">
+                            Okna/Drzwi
+                            <svg>
+                                <use xlink:href="img/icons/cancel_black_24dp.svg#cancel"></use>
+                            </svg>
+                        </button>
+                        <button pageTarget="#pagePCV">PCV</button>
+                        <button pageTarget="#pageAluminium">Aluminium</button>
+                        <button pageTarget="#pageDoors">Drzwi zewnętrzne</button>
+                    </div>
+                    <div class="menu__buttons-home-submenuPaint submenu" id="paintMenu">
+                        <button id="close">
+                            Tynki/Farby
+                            <svg>
+                                <use xlink:href="img/icons/cancel_black_24dp.svg#cancel"></use>
+                            </svg>
+                        </button>
+                        <button pageTarget="#pagePlasters">Tynki</button>
+                        <button pageTarget="#pagePaints">Farby</button>
+                    </div>
+                    <div class="menu__buttons-home-submenuProducts submenu" id="productsMenu">
+                        <button  id="close">
+                            Produkty
+                            <svg>
+                                <use xlink:href="img/icons/cancel_black_24dp.svg#cancel"></use>
+                            </svg>
+                        </button>
+                        <button pageTarget="#pageWindowsills">Parapety wewnętrzne i zewnętrzne</button>
+                        <button pageTarget="#pageBlind">Rolety zewnętrzne i wewnętrzne</button>
+                        <button pageTarget="#pageGarage">Bramy garażowe</button>
+                        <button pageTarget="#pageMosquitoNet">Moskitiery</button>
+                    </div>
+                    <div class="menu__buttons-home-submenuServices submenu" id="servicesMenu">
+                        <button id="close">
+                            Usługi
+                            <svg>
+                                <use xlink:href="img/icons/cancel_black_24dp.svg#cancel"></use>
+                            </svg>
+                        </button>
+                        <button pageTarget="#pageBuild">Ogólnobudowlane</button>
+                        <button pageTarget="#pageExcavator">Koparko-ładowarka</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="homePage" class="generalPage activePageWin">
+            <div class="generalPage__head">
+                <div class="generalPage__head-words">
+                    <span>PRODUCENT STOLARKI</span><br>
+                    <span>OKIENNEJ I DRZWIOWEJ</span><br>
+                    <span>PCV I ALUMINIUM</span>
+                </div>
+                <div class="generalPage__head-colorizer"></div>
+                <img class="generalPage__head-img" src="img/photos/alex-knight-5FCE7xTc5uo-unsplash.jpg" alt="Alex Knight from Unsplash">
+            </div>
+            <div class="generalPage__about lazyload">
+                <div class="generalPage__about-header"><h1 class="header-standard">O firmie</h1></div>
+                <div class="generalPage__about-article">
+                    <img src="img/photos/roberto-nickson-FqHU6aeVwf8-unsplash.jpg" alt="Roberto Nickson form Unsplash">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam velit quod id harum natus ex porro maxime unde autem consequuntur perspiciatis nulla dolore est repellat, modi fugiat et aliquam. Consequatur laudantium culpa quo molestiae ullam nisi repellendus, obcaecati aperiam doloremque? Unde ipsa maxime quam aperiam sed repellendus laboriosam perferendis inventore! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis et autem necessitatibus, reprehenderit, itaque tenetur libero accusamus molestiae asperiores non dolores ipsa est sapiente inventore, voluptatibus sit reiciendis rem ipsum cumque minus consectetur delectus? Omnis aut neque nemo nisi sit voluptatum quae officiis facilis! Illum voluptates obcaecati recusandae tempora unde?</p>
+                </div>
+            </div>
+            <div class="generalPage__text lazyload">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis temporibus aliquid quaerat necessitatibus quisquam amet repellat id consectetur eum nulla doloribus atque quas magni mollitia iste veniam fugiat, molestias quae animi nesciunt corrupti modi. Quis deleniti, reiciendis atque doloremque odit commodi aspernatur sed culpa vitae animi facilis rerum ratione eligendi autem nulla, minus rem id, iure voluptatibus maiores esse! Ipsa nulla iste deserunt, repellat blanditiis harum incidunt nesciunt aliquid ex aut doloribus tempora et numquam? Officia, quia officiis. Molestiae illo sapiente corporis quisquam soluta nam dolore dolores, itaque consectetur voluptas laudantium incidunt repellendus iure pariatur est veniam iste aut debitis. Perspiciatis nulla est eius facere iste debitis, odit praesentium accusantium illo maxime rem cumque! Maxime, saepe cupiditate exercitationem assumenda dignissimos neque maiores nemo, soluta aut consequatur hic molestiae ut repudiandae porro ex corrupti consectetur eaque dolorum enim numquam! Distinctio omnis maxime laboriosam nulla et nobis asperiores ab recusandae dolore culpa reiciendis, natus fugiat inventore quis? Cupiditate iusto dolores veniam quibusdam dolore odit deleniti architecto dolor animi praesentium quos explicabo natus autem libero sint eum aspernatur soluta, voluptatibus vel nihil. Quibusdam atque molestias accusamus qui voluptatibus, dolorem eos, nulla vero id illo, accusantium sint minima repellendus incidunt. Culpa obcaecati impedit illo.</p>
+            </div>
+            <div class="generalPage__portfolio lazyload">
+                <div class="generalPage__portfolio-header"><h1 class="header-standard">Wybrane realizacje</h1></div>
+                <div class="generalPage__portfolio-images">
+                    <div class="generalPage__portfolio-images-img"><img src="img/photos/daniel-wirtz-AXfDvKOawZQ-unsplash.jpg"></div>
+                    <div class="generalPage__portfolio-images-img"><img src="img/photos/nikola-johnny-mirkovic-thSS4ZuSaHo-unsplash.jpg"></div>
+                    <div class="generalPage__portfolio-images-img"><img src="img/photos/rob-wingate-Fd9tUmRBJzk-unsplash.jpg"></div>
+                    <div class="generalPage__portfolio-images-img"><img src="img/photos/anne-nygard-w7-cOgX-IVQ-unsplash.jpg"></div>
+                    <div class="generalPage__portfolio-images-img"><img src="img/photos/mitchell-luo-Pgy0tCrwi08-unsplash.jpg"></div>
+                    <div class="generalPage__portfolio-images-img"><img src="img/photos/edgar-moran-bxJCNO_3rYY-unsplash.jpg"></div>
+                    <div class="generalPage__portfolio-images-img"><img src="img/photos/karla-caloca-JlL1GumRqJ4-unsplash.jpg"></div>
+                    <div class="generalPage__portfolio-images-img"><img src="img/photos/the-blowup-YdnWOiItGvY-unsplash.jpg"></div>
+                </div>
+            </div>
+            <div class="generalPage__whyus lazyload">
+                <div class="generalPage__whyus-top">
+                    <div>
+                        <img src="img/photos/michael-48yI_ZyzuLo-unsplash(1).jpg">
+                    </div>
+                    <div class="generalPage__whyus-top-desc">
+                        <div><h1>Dlaczego warto z nami współpracować?</h1></div>
+                        <div> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minus ratione eos aperiam necessitatibus, voluptates accusamus sint! Magni, ex tempora delectus in eos odio aperiam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore iusto iste fugit in aut necessitatibus vitae laborum sapiente quasi accusamus, excepturi beatae voluptate nulla id! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum voluptatem expedita consectetur ipsa facilis facere deserunt cum esse, pariatur necessitatibus, sed dignissimos aperiam tenetur ab.</div>
+                        <div class="generalPage__whyus-top-desc__reasons">
+                            <div class="generalPage__whyus-top-desc__reasons-reason">
+                                <svg>
+                                    <use xlink:href="img/icons/developer_board_black_24dp.svg#develop"></use>
+                                </svg>
+                                <h2>Wciąż się rozwijamy i podążamy za trendami</h2>
+                            </div>
+                            <div class="generalPage__whyus-top-desc__reasons-reason">
+                                <svg>
+                                    <use xlink:href="img/icons/engineering_black_24dp.svg#experience"></use>
+                                </svg>
+                                <h2>Posiadamy lata doświadczenia</h2>
+                            </div>
+                            <div class="generalPage__whyus-top-desc__reasons-reason">
+                                <svg>
+                                    <use xlink:href="img/icons/precision_manufacturing_black_24dp.svg#precision"></use>
+                                </svg>
+                                <h2>Dysponujemy precyzyjnym sprzętem</h2>
+                            </div>
+                            <div class="generalPage__whyus-top-desc__reasons-reason">
+                                <svg>
+                                    <use xlink:href="img/icons/emoji_objects_black_24dp.svg#objects"></use>
+                                </svg>
+                                <h2>Jesteśmy innowacyjną firmą</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="generalPage__whyus-bottom">
+                    <div class="generalPage__whyus-bottom-desc">
+                        <div><h1>Co nas wyróżnia spośród innych firm?</h1></div>
+                        <div> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minus ratione eos aperiam necessitatibus, voluptates accusamus sint! Magni, ex tempora delectus in eos odio aperiam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore iusto iste fugit in aut necessitatibus vitae laborum sapiente quasi accusamus, excepturi beatae voluptate nulla id! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum voluptatem expedita consectetur ipsa facilis facere deserunt cum esse, pariatur necessitatibus, sed dignissimos aperiam tenetur ab.</div>
+                        <div class="generalPage__whyus-top-desc__reasons">
+                            <div class="generalPage__whyus-top-desc__reasons-reason">
+                                <svg>
+                                    <use xlink:href="img/icons/security_black_24dp.svg#security"></use>
+                                </svg>
+                                <h2>Bezpieczeństwo</h2>
+                            </div>
+                            <div class="generalPage__whyus-top-desc__reasons-reason">
+                                <svg>
+                                    <use xlink:href="img/icons/event_black_24dp.svg#event"></use>
+                                </svg>
+                                <h2>Szybki termin realizacji</h2>
+                            </div>
+                            <div class="generalPage__whyus-top-desc__reasons-reason">
+                                <svg>
+                                    <use xlink:href="img/icons/build_circle_black_24dp.svg#build"></use>
+                                </svg>
+                                <h2>Solidne wykonanie</h2>
+                            </div>
+                            <div class="generalPage__whyus-top-desc__reasons-reason">
+                                <svg>
+                                    <use xlink:href="img/icons/star_outline_black_24dp.svg#star"></use>
+                                </svg>
+                                <h2>Wysoka jakość produktu</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div><img src="img/photos/angela-pham-0PfDk7hhrdE-unsplash.jpg"></div>
+                </div>
+            </div>
+            <div class="generalPage__contactPanel lazyload">
+                <div class="generalPage__contactPanel-header"><h1 class="header-standard">Skontaktuj się z nami!</h1></div>
+                <div class="generalPage__contactPanel-panel">
+                    <div class="generalPage__contactPanel-panel-img">
+                        <img src="img/photos/contact-image.png">
+                    </div>
+                    <div class="generalPage__contactPanel-panel-form">
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            <label>Podaj swój adres email:</label>
+                            <input type="email" name="email" placeholder="Tu wpisz swój swój email" required>
+                            <label>Dodaj zdjęcie dotyczące wiadomości (opcjonalne):</label>
+                            <input type="file" name="image">
+                            <label>Napisz swoją wiadomość:</label>
+                            <textarea required name="message" name="message" placeholder="Wpisz swoją wiadomość"></textarea>
+                            <input type="submit" value="Wyślij" class="standard-btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pagePCV" class="pagePCV dnone">
+            <div class="pagePCV-product">
+                <div class="pagePCV-product-image">
+                    <h1 class="header-standard">Profil Aluplast</h1>
+                    <img src="//www.aluplast.com.pl/uploads//thumb_cache/318x438_1_58092f9dfb742a00e1759d7303a5a743e4796df1.jpg" alt="">
+                    <p>Image form: <a href="www.aluplast.com.pl">www.aluplast.com.pl</a></p>
+                </div>
+                <div class="pagePCV-product-profile">
+                    <h1 class="header-standard">IDEAL 4000</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <ul>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, in.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+                <div class="pagePCV-product-profile lazyload">
+                    <h1 class="header-standard">IDEAL 7000</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <ul>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, in.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pagePCV-product lazyload">
+                <div class="pagePCV-product-image">
+                    <h1 class="header-standard">Profil Decco</h1>
+                    <img src="https://www.decco.eu/wp-content/uploads/2020/02/hst_profil.jpg" alt="">
+                    <p>Image form: <a href="www.decco.eu">www.decco.eu</a></p>
+                </div>
+                <div class="pagePCV-product-profile">
+                    <h1 class="header-standard">Decco HST 100 Standard</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <ul>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, in.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+                <div class="pagePCV-product-profile lazyload">
+                    <h1 class="header-standard">Decco HST 83 Panoramico</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <ul>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, in.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pagePCV-product">
+                <div class="pagePCV-product-image">
+                    <h1 class="header-standard">Profil Salamander</h1>
+                    <img src="https://www.salamander-windows.com/neos/image/default/fce4ec7e-e0e5-cbec-dee5-114bf44b0756/1461673738" alt="">
+                    <p>Image form: <a href="www.salamander-windows.com">www.salamander-windows.com</a></p>
+                </div>
+                <div class="pagePCV-product-profile lazyload">
+                    <h1 class="header-standard">bluEvolution 82</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <ul>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, in.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+                <div class="pagePCV-product-profile lazyload">
+                    <h1 class="header-standard">bluEvolution 73</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <ul>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, in.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+                <div class="pagePCV-product-profile lazyload">
+                    <h1 class="header-standard">bluEvolution 92</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <ul>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, in.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+                <div class="pagePCV-product-profile lazyload">
+                    <h1 class="header-standard">Salamander Streamline</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <ul>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, in.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="pageAluminium" class="pageAluminium dnone">
+            <div class="pageAluminium-product lazyload">
+                <div class="pageAluminium-product-profile">
+                    <h1 class="header-standard">Wewnętrzne</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <div class="pageAluminium-product-profile-image">
+                        <img src="img/photos/2_MB-45-okno_resize.jpg" alt="">
+                        <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <ul>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, in.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+                <div class="pageAluminium-product-profile lazyload">
+                    <h1 class="header-standard">Zewnętrzne</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <div class="pageAluminium-product-profile-image">
+                        <img src="img/photos/mb-59s.jpg" alt="">
+                        <img src="img/photos/mb59s.jpg" alt="">
+                        <p>Images form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <ul>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, in.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+                <div class="pageAluminium-product-profile lazyload">
+                    <h1 class="header-standard">Fasady</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                </div>
+                <div class="pageAluminium-product-profile lazyload">
+                    <h1 class="header-standard">Ogrody zimowe</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore consectetur blanditiis pariatur, voluptatem nemo quia aspernatur unde fugit quam placeat, quibusdam similique praesentium esse asperiores. Inventore necessitatibus sapiente quaerat blanditiis saepe maxime? Nulla delectus necessitatibus ratione sapiente asperiores corrupti tempore impedit sint eaque. Nisi nulla nam quia corporis blanditiis similique? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora veniam modi officiis autem beatae provident eligendi aspernatur. Dolore, molestias nisi. Eaque facilis, adipisci illo corrupti amet maxime. Aspernatur hic velit sunt maiores impedit expedita debitis voluptatum reiciendis laborum, sequi laudantium ab illum obcaecati? Vitae consequatur sunt voluptatum. Sit reiciendis nesciunt possimus iusto, deserunt, eum rerum laudantium assumenda non provident dolorem hic aperiam neque laborum itaque sunt tempora? Ea quos, reiciendis delectus possimus tempora distinctio vitae dolorum dolorem, magnam tempore illum facilis voluptas, architecto quo facere nostrum dignissimos ex atque quisquam? Similique nostrum libero eligendi! Veniam debitis, obcaecati illum quam quas reiciendis asperiores cupiditate, doloribus reprehenderit dolore officia. Consequatur commodi id, atque aliquid laudantium rem facilis minima consectetur ea ducimus autem placeat tempore inventore officiis in modi, numquam libero! Asperiores, iste, illo sit laboriosam eos autem soluta consequatur enim nihil ab ullam cumque repellendus aliquid dolorem molestiae! Aut obcaecati doloribus sequi numquam quam libero aspernatur eaque commodi pariatur. Excepturi omnis exercitationem labore libero sint quia autem asperiores corrupti cumque velit, eligendi fugit non harum, deleniti magnam, quos aut quod rem voluptas? Dolorum earum illo necessitatibus possimus, similique quis quidem consequatur et. Amet, ex nam. Tempora id repellendus ipsam! Nemo, nobis consequatur.</p>
+                    <ul>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut, in.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing.</li>
+                        <li>Lorem, ipsum dolor.</li>
+                        <li>Lorem ipsum dolor sit.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="pageDoors" class="pageDoors dnone">
+            <div class="pageDoors-navigate">
+                <div partTarget="#steel" class="pageDoors-navigate-element steelBtn elementActive">Stalowe</div>
+                <div partTarget="#pcv" class="pageDoors-navigate-element pcvBtn">PCV</div>
+                <div partTarget="#aluminium" class="pageDoors-navigate-element aluminiumBtn">Aluminium</div>
+            </div>
+            <div id="steel" class="pageDoors-steel doorsPart activePage">
+                <div class="pageDoors-steel-header"><h1 class="header-standard">Stalowe</h1></div>
+                <div class="pageDoors-steel-image">
+                    <img src="img/photos/multi=5B1=5D.png">
+                    <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+                </div>
+                <div class="pageDoors-steel-text">
+                    <h2 class="header-black">Drzwi zewnętrzne KMT plus pełne</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores tenetur laudantium, ea nihil dolorem repudiandae maxime voluptas aliquam, nostrum, nam mollitia sit quasi culpa. Corporis modi molestias repellat error. Non nihil, quo id quasi deleniti autem dicta molestias fugit commodi cum rerum dolor sint ex sit quis at itaque sapiente facere officiis veritatis? Cumque ab beatae quaerat aperiam, rerum asperiores corporis nulla impedit. Rem dignissimos quod dolorem iste soluta non animi omnis nobis totam pariatur, in, sequi nulla esse dolores, consequuntur dolore natus quos unde quia nam atque necessitatibus perspiciatis officiis! Aspernatur, debitis aliquam. Error in praesentium eligendi sequi hic debitis iste rerum eius quibusdam totam quos voluptates quisquam quaerat expedita libero modi, unde laborum. Iure sequi beatae aperiam laudantium. Asperiores recusandae nisi enim perspiciatis nulla vel possimus consectetur magni nostrum, dolores inventore fuga, necessitatibus voluptate quaerat explicabo id incidunt mollitia facilis deleniti eius amet suscipit! Voluptas, sunt veniam perferendis corporis quisquam enim est recusandae et amet sit delectus voluptatem nostrum facere adipisci ducimus sint quo nesciunt sapiente autem eligendi, nam quia. Dolorum officia voluptates consectetur non laboriosam totam doloribus natus aperiam est error libero cum, nihil laborum asperiores sit? Illo placeat, molestiae iure quaerat assumenda aperiam. Veniam, repudiandae reiciendis.</p>
+                </div>
+                <div class="pageDoors-steel-image">
+                    <img src="img/photos/drzwi-kmt-plus-100-tki-t_675.jpg">
+                    <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+                </div>
+                <div class="pageDoors-steel-text">
+                    <h2 class="header-black">Drzwi zewnętrzne KMT plus przeszklone</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores tenetur laudantium, ea nihil dolorem repudiandae maxime voluptas aliquam, nostrum, nam mollitia sit quasi culpa. Corporis modi molestias repellat error. Non nihil, quo id quasi deleniti autem dicta molestias fugit commodi cum rerum dolor sint ex sit quis at itaque sapiente facere officiis veritatis? Cumque ab beatae quaerat aperiam, rerum asperiores corporis nulla impedit. Rem dignissimos quod dolorem iste soluta non animi omnis nobis totam pariatur, in, sequi nulla esse dolores, consequuntur dolore natus quos unde quia nam atque necessitatibus perspiciatis officiis! Aspernatur, debitis aliquam. Error in praesentium eligendi sequi hic debitis iste rerum eius quibusdam totam quos voluptates quisquam quaerat expedita libero modi, unde laborum. Iure sequi beatae aperiam laudantium. Asperiores recusandae nisi enim perspiciatis nulla vel possimus consectetur magni nostrum, dolores inventore fuga, necessitatibus voluptate quaerat explicabo id incidunt mollitia facilis deleniti eius amet suscipit! Voluptas, sunt veniam perferendis corporis quisquam enim est recusandae et amet sit delectus voluptatem nostrum facere adipisci ducimus sint quo nesciunt sapiente autem eligendi, nam quia. Dolorum officia voluptates consectetur non laboriosam totam doloribus natus aperiam est error libero cum, nihil laborum asperiores sit? Illo placeat, molestiae iure quaerat assumenda aperiam. Veniam, repudiandae reiciendis.</p>
+                </div>
+                <div class="pageDoors-steel-image">
+                    <img src="img/photos/1b(1).jpg">
+                    <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+                </div>
+                <div class="pageDoors-steel-text">
+                    <h2 class="header-black">Drzwi zewnętrzne KMT plus przeszklone</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores tenetur laudantium, ea nihil dolorem repudiandae maxime voluptas aliquam, nostrum, nam mollitia sit quasi culpa. Corporis modi molestias repellat error. Non nihil, quo id quasi deleniti autem dicta molestias fugit commodi cum rerum dolor sint ex sit quis at itaque sapiente facere officiis veritatis? Cumque ab beatae quaerat aperiam, rerum asperiores corporis nulla impedit. Rem dignissimos quod dolorem iste soluta non animi omnis nobis totam pariatur, in, sequi nulla esse dolores, consequuntur dolore natus quos unde quia nam atque necessitatibus perspiciatis officiis! Aspernatur, debitis aliquam. Error in praesentium eligendi sequi hic debitis iste rerum eius quibusdam totam quos voluptates quisquam quaerat expedita libero modi, unde laborum. Iure sequi beatae aperiam laudantium. Asperiores recusandae nisi enim perspiciatis nulla vel possimus consectetur magni nostrum, dolores inventore fuga, necessitatibus voluptate quaerat explicabo id incidunt mollitia facilis deleniti eius amet suscipit! Voluptas, sunt veniam perferendis corporis quisquam enim est recusandae et amet sit delectus voluptatem nostrum facere adipisci ducimus sint quo nesciunt sapiente autem eligendi, nam quia. Dolorum officia voluptates consectetur non laboriosam totam doloribus natus aperiam est error libero cum, nihil laborum asperiores sit? Illo placeat, molestiae iure quaerat assumenda aperiam. Veniam, repudiandae reiciendis.</p>
+                </div>
+                <div class="pageDoors-steel-image">
+                    <img src="img/photos/drzwi-zewnętrzne-dwuskrzydłowe-metalowe-przeszklone-witraż-p-gerda-gtt-plus-duo-klasy-2-w93-werona-3(1).jpg">
+                    <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+                </div>
+                <div class="pageDoors-steel-text">
+                    <h2 class="header-black">Drzwi zewnętrzne KMT plus z dostawkami</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores tenetur laudantium, ea nihil dolorem repudiandae maxime voluptas aliquam, nostrum, nam mollitia sit quasi culpa. Corporis modi molestias repellat error. Non nihil, quo id quasi deleniti autem dicta molestias fugit commodi cum rerum dolor sint ex sit quis at itaque sapiente facere officiis veritatis? Cumque ab beatae quaerat aperiam, rerum asperiores corporis nulla impedit. Rem dignissimos quod dolorem iste soluta non animi omnis nobis totam pariatur, in, sequi nulla esse dolores, consequuntur dolore natus quos unde quia nam atque necessitatibus perspiciatis officiis! Aspernatur, debitis aliquam. Error in praesentium eligendi sequi hic debitis iste rerum eius quibusdam totam quos voluptates quisquam quaerat expedita libero modi, unde laborum. Iure sequi beatae aperiam laudantium. Asperiores recusandae nisi enim perspiciatis nulla vel possimus consectetur magni nostrum, dolores inventore fuga, necessitatibus voluptate quaerat explicabo id incidunt mollitia facilis deleniti eius amet suscipit! Voluptas, sunt veniam perferendis corporis quisquam enim est recusandae et amet sit delectus voluptatem nostrum facere adipisci ducimus sint quo nesciunt sapiente autem eligendi, nam quia. Dolorum officia voluptates consectetur non laboriosam totam doloribus natus aperiam est error libero cum, nihil laborum asperiores sit? Illo placeat, molestiae iure quaerat assumenda aperiam. Veniam, repudiandae reiciendis.</p>
+                </div>
+                <div class="pageDoors-steel-image">
+                    <img src="img/photos/_925eb0569a.jpg">
+                    <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+                </div>
+            </div>
+            <div id="pcv" class="pageDoors-PCV doorsPart dnone">
+                <div class="pageDoors-PCV-header"><h1 class="header-standard">PCV</h1></div>
+                <div class="pageDoors-PCV-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores tenetur laudantium, ea nihil dolorem repudiandae maxime voluptas aliquam, nostrum, nam mollitia sit quasi culpa. Corporis modi molestias repellat error. Non nihil, quo id quasi deleniti autem dicta molestias fugit commodi cum rerum dolor sint ex sit quis at itaque sapiente facere officiis veritatis? Cumque ab beatae quaerat aperiam, rerum asperiores corporis nulla impedit. Rem dignissimos quod dolorem iste soluta non animi omnis nobis totam pariatur, in, sequi nulla esse dolores, consequuntur dolore natus quos unde quia nam atque necessitatibus perspiciatis officiis! Aspernatur, debitis aliquam. Error in praesentium eligendi sequi hic debitis iste rerum eius quibusdam totam quos voluptates quisquam quaerat expedita libero modi, unde laborum. Iure sequi beatae aperiam laudantium. Asperiores recusandae nisi enim perspiciatis nulla vel possimus consectetur magni nostrum, dolores inventore fuga, necessitatibus voluptate quaerat explicabo id incidunt mollitia facilis deleniti eius amet suscipit! Voluptas, sunt veniam perferendis corporis quisquam enim est recusandae et amet sit delectus voluptatem nostrum facere adipisci ducimus sint quo nesciunt sapiente autem eligendi, nam quia. Dolorum officia voluptates consectetur non laboriosam totam doloribus natus aperiam est error libero cum, nihil laborum asperiores sit? Illo placeat, molestiae iure quaerat assumenda aperiam. Veniam, repudiandae reiciendis.</p>
+                </div>
+                <div class="pageDoors-PCV-image">
+                    <img src="img/photos/profil_pcv.png">
+                    <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+                </div>
+            </div>
+            <div id="aluminium" class="pageDoors-PCV doorsPart dnone">
+                <div class="pageDoors-PCV-header"><h1 class="header-standard">Aluminium</h1></div>
+                <div class="pageDoors-PCV-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores tenetur laudantium, ea nihil dolorem repudiandae maxime voluptas aliquam, nostrum, nam mollitia sit quasi culpa. Corporis modi molestias repellat error. Non nihil, quo id quasi deleniti autem dicta molestias fugit commodi cum rerum dolor sint ex sit quis at itaque sapiente facere officiis veritatis? Cumque ab beatae quaerat aperiam, rerum asperiores corporis nulla impedit. Rem dignissimos quod dolorem iste soluta non animi omnis nobis totam pariatur, in, sequi nulla esse dolores, consequuntur dolore natus quos unde quia nam atque necessitatibus perspiciatis officiis! Aspernatur, debitis aliquam. Error in praesentium eligendi sequi hic debitis iste rerum eius quibusdam totam quos voluptates quisquam quaerat expedita libero modi, unde laborum. Iure sequi beatae aperiam laudantium. Asperiores recusandae nisi enim perspiciatis nulla vel possimus consectetur magni nostrum, dolores inventore fuga, necessitatibus voluptate quaerat explicabo id incidunt mollitia facilis deleniti eius amet suscipit! Voluptas, sunt veniam perferendis corporis quisquam enim est recusandae et amet sit delectus voluptatem nostrum facere adipisci ducimus sint quo nesciunt sapiente autem eligendi, nam quia. Dolorum officia voluptates consectetur non laboriosam totam doloribus natus aperiam est error libero cum, nihil laborum asperiores sit? Illo placeat, molestiae iure quaerat assumenda aperiam. Veniam, repudiandae reiciendis.</p>
+                </div>
+                <div class="pageDoors-PCV-image">
+                    <img src="img/photos/9s1_large(1).jpg">
+                    <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+                </div>
+            </div>
+        </div>
+        <div id="pagePlasters" class="pagePlasters dnone">
+            <div class="pagePlasters-header"><h1 class="header-standard">Tynki</h1></div>
+            <div class="pagePlasters-img">
+                <img src="img/photos/ceresit-dom-w-kolorach-natury 2.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePlasters-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pagePlasters-header"><h1 class="header-black">Tynk akrylowy CT 60</h1></div>
+            <div class="pagePlasters-img">
+                <img class="pagePlasters-img-plaster" src="img/photos/ct 60.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePlasters-header"><h1 class="header-black">Tynk akrylowy CT 63</h1></div>
+            <div class="pagePlasters-img">
+                <img class="pagePlasters-img-plaster" src="img/photos/ct 63.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePlasters-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pagePlasters-header"><h1 class="header-black">Tynk silikatowy CT 72</h1></div>
+            <div class="pagePlasters-img">
+                <img class="pagePlasters-img-plaster" src="img/photos/ct 72.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePlasters-header"><h1 class="header-black">Tynk silikatowy CT 73</h1></div>
+            <div class="pagePlasters-img">
+                <img class="pagePlasters-img-plaster" src="img/photos/ct 73.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePlasters-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pagePlasters-header"><h1 class="header-black">Tynk silikatowo-silikonowy CT 174</h1></div>
+            <div class="pagePlasters-img">
+                <img class="pagePlasters-img-plaster" src="img/photos/174.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePlasters-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+        </div>
+        <div id="pagePaints" class="pagePaints dnone">
+            <div class="pagePaints-header"><h1 class="header-standard">Farby</h1></div>
+            <div class="pagePaints-img">
+                <img src="img/photos/ceresit paleta.jpeg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePaints-header"><h1 class="header-black">CT 42</h1></div>
+            <div class="pagePaints-img">
+                <img class="pagePaints-img-plaster" src="img/photos/ct 42(1).jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePaints-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pagePaints-header"><h1 class="header-black">CT 44</h1></div>
+            <div class="pagePaints-img">
+                <img class="pagePaints-img-plaster" src="img/photos/ct 44.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePaints-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pagePaints-header"><h1 class="header-black">CT 48</h1></div>
+            <div class="pagePaints-img">
+                <img class="pagePaints-img-plaster" src="img/photos/ct 48.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePaints-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pagePaints-header"><h1 class="header-black">CT 54</h1></div>
+            <div class="pagePaints-img">
+                <img class="pagePaints-img-plaster" src="img/photos/ct 54.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePaints-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pagePaints-header"><h1 class="header-black">CT 49 Silix XD</h1></div>
+            <div class="pagePaints-img">
+                <img class="pagePaints-img-plaster" src="img/photos/49 xd(2).jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pagePaints-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+        </div>
+        <div id="pageWindowsills" class="pageWindowsills dnone">
+            <div class="pageWindowsills-header"><h1 class="header-standard">Parapety wewnętrzne i zewnętrzne</h1></div>
+            <div class="pageWindowsills-header"><h1 class="header-black">Parapet PCV</h1></div>
+            <div class="pageWindowsills-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pageWindowsills-img">
+                <img src="img/photos/Paraoet PCV marmurek(1).png">
+                <img src="img/photos/Parapet PCV biały(1).png">
+                <img src="img/photos/Parapet PCV orzech(1).png">
+                <img src="img/photos/Parapet PCV złoty dąb.png">
+                <p>Images form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageWindowsills-header"><h1 class="header-black">Parapet stalowy</h1></div>
+            <div class="pageWindowsills-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pageWindowsills-img">
+                <img src="img/photos/parapet zewnetrzny stalowy antracyt(1).png">
+                <img src="img/photos/parapet zewnetrzny stalowy biały(1).png">
+                <img src="img/photos/parapet zewnetrzny stalowy brąz(1).png">
+                <img src="img/photos/Parapet zewnetrzny stalowy orzech(1).png">
+                <img src="img/photos/parapet zewnetrzny stalowy srebrny(1).png">
+                <img src="img/photos/parapet zewnetrzny stalowy wenge(1).jpg">
+                <img src="img/photos/parapet zewnętrzny stalowy złoty dab(1).png">
+                <p>Images form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageWindowsills-header"><h1 class="header-black">Parapet aluminiowy - imitacja płytki</h1></div>
+            <div class="pageWindowsills-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pageWindowsills-img">
+                <img src="img/photos/antyk cegła-imitacja płytki.png">
+                <img src="img/photos/antyk złoty dąb-imitacja płytki.png">
+                <img src="img/photos/imitacja płytki-brąz.png">
+                <p>Images form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageWindowsills-header"><h1 class="header-black">Parapet marmur</h1></div>
+            <div class="pageWindowsills-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pageWindowsills-img">
+                <img src="img/photos/arabescato_bianco.jpg">
+                <img src="img/photos/botticino.jpg">
+                <img src="img/photos/breccia aurora.jpg">
+                <img src="img/photos/perlato royal.jpeg">
+                <img src="img/photos/rossa del garda.jpg">
+                <img src="img/photos/verde alpi.jpg">
+                <p>Images form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageWindowsills-img">
+                <img src="img/photos/35997 koncajs.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageWindowsills-header"><h1 class="header-black">Parapet MDF</h1></div>
+            <div class="pageWindowsills-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pageWindowsills-img">
+                <img src="img/photos/magura złoty dab.jpg">
+                <img src="img/photos/magura-dab jasny.jpg">
+                <img src="img/photos/magura-orzech.jpg">
+                <p>Images form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageWindowsills-header"><h1 class="header-black">Parapet z marmuru syntetycznego</h1></div>
+            <div class="pageWindowsills-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pageWindowsills-img">
+                <img src="img/photos/koncajs.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+        </div>
+        <div id="pageBlind" class="pageBlind dnone">
+            <div class="pageBlind-header"><h1 class="header-standard">Rolety zewnętrzne i wewnętrzne</h1></div>
+            <div class="pageBlind-header"><h1 class="header-black">Rolety wewnętrzne</h1></div>
+            <div class="pageBlind-img">
+                <img src="img/photos/roletki-gracja-4(1).jpg">
+                <p>Images form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageBlind-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pageBlind-img">
+                <img src="img/photos/roletki-dzien-noc-2.jpg">
+                <p>Images form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageBlind-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pageBlind-header"><h1 class="header-black">Rolety zewnętrzne</h1></div>
+            <div class="pageBlind-img">
+                <img src="img/photos/BeClever-3.jpg">
+                <p>Images form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageBlind-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pageBlind-img">
+                <img src="img/photos/rolety-zew-fart-revo-1-400x533.jpg">
+                <p>Images form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageBlind-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+            <div class="pageBlind-img">
+                <img src="img/photos/Sk45-4-300x300.jpg">
+                <p>Images form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageBlind-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+        </div>
+        <div id="pageGarage" class="pageGarage dnone">
+            <div class="pageGarage-header"><h1 class="header-standard">Bramy garażowe</h1></div>
+            <div class="pageGarage-img">
+                <img src="img/photos/bramy-garaz-segment-5.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageGarage-text">
+                <p>
+                    Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quas nemo modi esse architecto sint dolorum dignissimos animi deleniti repellendus, praesentium, consectetur laudantium fugit rem consequuntur atque amet asperiores quae veniam sequi dolores. Deleniti ad modi commodi amet illo fugiat. Rerum magnam facere, alias temporibus incidunt, itaque explicabo praesentium animi quod facilis repellendus eius porro deleniti minima architecto debitis labore obcaecati ea asperiores dolorem! Consectetur enim voluptates alias quis officia porro. Aperiam dicta aspernatur optio. Architecto, quisquam atque molestiae quos tempore aperiam porro ipsam iusto amet perferendis cupiditate sint sequi numquam incidunt iure repellendus distinctio temporibus voluptas facilis asperiores qui quae ratione harum magnam? Molestiae qui ad iste! Id architecto perspiciatis suscipit laborum distinctio quos numquam ex vel eos, odio, ratione quas voluptate quasi illum. Asperiores nisi rem a cum molestiae optio cupiditate iure dolore inventore architecto nam consectetur totam doloribus consequuntur doloremque minima magnam, ducimus itaque aperiam veritatis repellat maiores quam neque. Accusamus ea earum hic, voluptatem odit rem vitae mollitia omnis sint at id fugit tempore ut quae. Voluptates cumque fugit natus recusandae ducimus esse atque voluptatem odio quo! Deserunt fugiat cupiditate numquam. Fugit facere sunt inventore totam sit dolor! Cum doloribus ipsam ad dolores atque id dolore illum, quo nostrum, incidunt aliquid culpa quisquam totam rem amet? Consequatur praesentium officia explicabo eius quo? Officia quod cupiditate eligendi saepe, ab, soluta quam dolorum harum provident iste maiores temporibus reprehenderit quae iure officiis? Corrupti, eligendi minus amet sunt ex culpa impedit veritatis quidem, expedita pariatur libero iste ratione incidunt atque! Culpa voluptatem tempora quia laborum harum accusantium deserunt alias laboriosam. Suscipit, vero! Qui deleniti est modi placeat at, iusto quia ipsam magnam vero quas! Iusto consequuntur minima assumenda, aut sit adipisci id quasi nihil quo eos minus incidunt dolores voluptate saepe. Nam deleniti nemo quis consequatur ab nisi aspernatur pariatur eaque, perferendis natus culpa, recusandae cumque itaque minus maxime veniam maiores quae? Officiis consequatur eius nostrum cumque est voluptate quis omnis deserunt dolorem corrupti dicta eos rem, odio similique? Quidem eius deserunt, temporibus molestias ea vero perspiciatis, velit qui commodi unde voluptatem. Quae debitis eligendi aspernatur at a culpa ratione hic officiis tempora? Aliquam unde architecto distinctio soluta veritatis adipisci veniam sit molestias quo excepturi, praesentium voluptatem ex provident perferendis harum quos delectus omnis dignissimos numquam velit sed deleniti! Esse ex animi tempore reprehenderit repudiandae molestias reiciendis temporibus sequi illum, mollitia quas nesciunt dicta excepturi unde tempora in odio necessitatibus voluptatem nobis repellat vel quam. Illo animi quam sint minus quidem temporibus. Ad repellendus odio doloribus, assumenda excepturi quasi ex dolor reiciendis dicta quam! Quia, illum eaque! Assumenda ad odit ex! Ipsum sapiente odio qui accusamus deleniti harum minima aliquam consequatur odit error reiciendis unde quidem, magni perferendis nulla impedit praesentium sed id? Eveniet vero ipsum in fuga, ea a enim non ab fugit ut ipsam, ipsa officia quas expedita dolor pariatur commodi placeat explicabo, quae debitis. Incidunt, ipsum modi! Nostrum inventore illum dicta sint minus, maxime eveniet voluptatem ullam delectus dolore a, iure facere, omnis at ipsum modi. ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+        </div>
+        <div id="pageMosquitoNet" class="pageMosquitoNet dnone">
+            <div class="pageMosquitoNet-header"><h1 class="header-standard">Moskitiery</h1></div>
+            <div class="pageMosquitoNet-img">
+                <img src="img/photos/moskitiery.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageMosquitoNet-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+        </div>
+        <div id="pageBuild" class="pageBuild dnone">
+            <div class="pageBuild-header"><h1 class="header-standard">Koparko-ładowarka</h1></div>
+            <div class="pageBuild-img">
+                <img src="img/photos/4cx_2_xxl.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageBuild-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+        </div>
+        <div id="pageExcavator" class="pageExcavator dnone">
+            <div class="pageExcavator-header"><h1 class="header-standard">Koparko-ładowarka</h1></div>
+            <div class="pageExcavator-img">
+                <img src="img/photos/4cx_2_xxl.jpg">
+                <p>Image form: <a href="www.domplast.com.pl">www.domplast.com.pl</a></p>
+            </div>
+            <div class="pageExcavator-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, soluta placeat. Molestias molestiae sunt, vero ipsam esse facere et error aliquid nulla optio ex. Illo cupiditate porro ut veniam eius dolor provident suscipit rerum a natus, praesentium sint, quos consectetur distinctio dolorem? Animi minus quidem repudiandae necessitatibus cum! Ea sit quos iusto reprehenderit, repellat aliquid ad nam sed sapiente repellendus consectetur neque aliquam quae quibusdam fuga quis soluta vel odio debitis est saepe rerum! Odio aliquam minima natus! Reiciendis porro unde doloribus. Officia obcaecati provident explicabo maiores. Exercitationem magnam natus temporibus aliquid corrupti sequi quidem ratione magni obcaecati aut ipsam libero nisi officiis molestias repellat itaque, hic eius ut atque a dicta debitis. Possimus excepturi voluptates at sit facilis adipisci, quam necessitatibus omnis nostrum, sunt, repellendus quos aliquid laboriosam. Esse cupiditate commodi harum sunt perspiciatis aliquam tenetur sed eveniet, maiores eius et pariatur nisi voluptates aut necessitatibus quae voluptas, rerum, voluptate odit cum quam magnam numquam eum itaque. Neque, ducimus et. Saepe quidem dolores nulla ab esse soluta sint similique quas, ullam sed voluptatem nesciunt iure obcaecati veritatis aut perferendis totam voluptatibus quaerat aperiam! Unde necessitatibus earum aspernatur neque possimus officiis nostrum natus, facilis, amet debitis dignissimos illo molestiae laboriosam.
+                </p>
+            </div>
+        </div>
+        <div id="pageWork" class="pageWork dnone">
+            <div class="pageWork-header"><h1 class="header-standard">Poszukujemy pracowników!</h1></div>
+            <div class="pageWork-text">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur ipsam libero aperiam sint illo. Illum, blanditiis est, maxime, ea doloribus deleniti eligendi vero reiciendis quae consectetur quibusdam eum mollitia debitis id. Quasi voluptas tempore a dolore doloremque mollitia debitis numquam rerum inventore veniam, eligendi omnis doloribus officiis, accusantium, beatae unde porro. Recusandae, eius quo. Blanditiis temporibus beatae inventore quo alias ipsam eaque earum nisi nesciunt a eum modi cumque molestias sunt, accusamus delectus officia, cum rem necessitatibus quidem ratione vero magnam dolores vitae? Eum omnis, cumque dicta eos beatae explicabo. Sequi laborum molestias suscipit ut iste nisi veniam nostrum quasi magni minima provident quos tempora soluta nihil hic aliquam quis id harum ducimus quae, inventore dicta placeat! Dolor, architecto sunt eos explicabo, eveniet, optio officiis fugit porro tempora voluptas veniam unde ducimus similique neque quas vero eaque dignissimos minima ex fugiat incidunt pariatur nesciunt. Ad cum sit odit? Fugit architecto totam officiis a quam ratione autem sequi repellendus perferendis repudiandae sint explicabo, ad inventore qui, sunt, nemo incidunt? Nobis, eum! Non temporibus natus doloribus architecto obcaecati nulla, fuga cumque rem amet accusamus, perspiciatis, repellendus quis consequatur. In magnam culpa cumque assumenda optio numquam, consectetur illum temporibus non illo, similique quos quam dolore autem ab delectus dignissimos facilis qui reprehenderit dolores excepturi perferendis officiis! Voluptates magnam dignissimos eveniet et, autem id laudantium minus ipsa possimus inventore voluptatum fuga harum aperiam nesciunt accusamus, architecto cumque blanditiis ullam error quis minima quae voluptate. Dolorum, aperiam! Quis optio mollitia laboriosam ab assumenda, quasi illo!</p>
+            </div>
+        </div>
+        <div id="pageContact" class="pageContact dnone">
+            <div class="generalPage__contactPanel">
+                <div class="generalPage__contactPanel-header"><h1 class="header-standard">Skontaktuj się z nami!</h1></div>
+                <div class="generalPage__contactPanel-panel">
+                    <div class="generalPage__contactPanel-panel-img">
+                        <img src="img/photos/contact-image.png">
+                    </div>
+                    <div class="generalPage__contactPanel-panel-form">
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            <label>Podaj swój adres email:</label>
+                            <input type="email" name="email" placeholder="Tu wpisz swój swój email" required>
+                            <label>Dodaj zdjęcie dotyczące wiadomości (opcjonalne):</label>
+                            <input type="file" name="image">
+                            <label>Napisz swoją wiadomość:</label>
+                            <textarea required name="message" name="message" placeholder="Wpisz swoją wiadomość"></textarea>
+                            <input type="submit" value="Wyślij" class="standard-btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="pageContact-info">
+                <div>
+                    <svg>
+                        <use xlink:href="img/icons/phone_in_talk_black_24dp.svg#phone"></use>
+                    </svg>
+                    <h2 class="header-black">tel. 123 123 123</h2>
+                    <h2 class="header-black">tel. 456 456 456</h2>
+                </div>
+                <div>
+                    <svg>
+                        <use xlink:href="img/icons/email_black_24dp.svg#mail"></use>
+                    </svg>
+                    <h2 class="header-black">examplemail1@ex.com</h2>
+                    <h2 class="header-black">examplemail2@ex.com</h2>
+                </div>
+                <div>
+                    <svg>
+                        <use xlink:href="img/icons/location_on_black_24dp.svg#location"></use>
+                    </svg>
+                    <h2 class="header-black">00-000 Jakaś Miejscowość</h2>
+                    <h2 class="header-black">ul. Nieistniejąca 1</h2>
+                </div>
+            </div>
+        </div>
+        <div class="mapHeader"><h1 class="header-black">Zobacz na mapie</h1></div>
+        <div id='map'></div>
+        <div class="newsletter">
+            <div class="newsletter-container">
+                <div class="newsletter-container-text">
+                    <h2>Subskrybuj nasz newsletter</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolore exercitationem nihil numquam est libero aperiam qui, placeat quod doloremque maiores harum aut ut deserunt quisquam, fuga saepe sint ab, deleniti minus! Dolor consequatur deserunt dignissimos quibusdam porro aperiam iure, nostrum maiores, possimus cupiditate dolorum totam facilis iste dolorem ipsam?</p>
+                </div>
+                <div class="newsletter-container-input">
+                    <form>
+                        <input class="email" type="text" name="email" placeholder="Wpisz swój adres email">
+                        <input class="standard-btn" type="submit" value="Zapisz mnie">
+                    </form>
+                </div>
+            </div>
+            <div class="newsletter-colorizer"></div>
+            <img class="newsletter-img" src="img/photos//r-mo-w-_iZqdviAo-unsplash.jpg">
+        </div>
+        <footer class="footer">
+            <div class="footer-containers">
+                <div>
+                    <span>Facebook</span>
+                    <span>Twitter</span>
+                    <span>Snapchat</span>
+                </div>
+                <div>
+                    <span>Kontakt</span>
+                    <span>Something</span>
+                    <span>Something</span>
+                </div>
+            </div>
+            <div class="footer-copy">
+                <div>Copyright© FakeWebsite <span id="year-footer">2021</span></div>
+                <div>Uwaga nie jest to prawdziwa strona, została stworzona w celu nauki programowania! Autor: Oskar Dąbrowski</div>
+            </div>
+        </footer>
+        <script src="js/images-modal.js"></script>
+        <script src="js/menu.js"></script>
+        <script src="js/doorsSlides.js"></script>
+        <script src="js/lazyLoad.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/map-consfig.js"></script>
+    </body>
+</html>
